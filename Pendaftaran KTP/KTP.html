@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pendaftaran KTP</title>
+  <style>
+    html {
+      background-color: rgb(157, 178, 191);
+    }
+    h1 {
+      color: black;
+      text-align: center;
+    }
+    form {
+      background-color: rgb(221, 230, 237);
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function proses() {
+      var nama = document.getElementById("nama").value;
+      var nik = document.getElementById("nik").value;
+      var tmp = document.getElementById("tmp").value;
+      var tgl = document.getElementById("tgl").value;
+      var pekerjaan = document.getElementById("pekerjaan").value;
+      var alamat = document.getElementById("alamat").value;
+      var status = document.getElementById("status").value;
+      var agama = document.getElementById("agama").value;
+      var golongan = document.getElementById("golongan").value;
+      var kelamin = document.getElementById("jenis_kelamin").value;
+      var kewarganegaraan = document.getElementById("kewarganegaraan").value;
+
+      if (nama == "") {
+        alert("Mohon masukkan Nama Lengkap.");
+        return false;
+      } else if (nik == "") {
+        alert("Mohon masukkan NIK.");
+        return false;
+      } else if (tmp == "") {
+        alert("Mohon masukkan Tempat Lahir.");
+        return false;
+      } else if (tgl == "") {
+        alert("Mohon masukkan Tanggal Lahir.");
+        return false;
+      } else if (pekerjaan == "") {
+        alert("Mohon masukkan Pekerjaan.");
+        return false;
+      } else if (alamat == "") {
+        alert("Mohon masukkan Alamat.");
+        return false;
+      } else if (status == "") {
+        alert("Mohon pilih Status Pernikahan.");
+        return false;
+      } else if (agama == "") {
+        alert("Mohon pilih Agama.");
+        return false;
+      } else if (kelamin == "") {
+        alert("Mohon pilih Jenis Kelamin.");
+        return false;
+      } else if (kewarganegaraan == "") {
+        alert("Mohon pilih Kewarganegaraan.");
+        return false;
+      } else {
+        alert(
+          "Nama: " + nama + "\n" +
+          "NIK: " + nik + "\n" +
+          "Tempat Lahir: " + tmp + "\n" +
+          "Tanggal Lahir: " + tgl + "\n" +
+          "Pekerjaan: " + pekerjaan + "\n" +
+          "Alamat: " + alamat + "\n" +
+          "Status: " + status + "\n" +
+          "Agama: " + agama + "\n" +
+          "Golongan Darah: " + golongan + "\n" +
+          "Jenis Kelamin: " + kelamin + "\n" +
+          "Kewarganegaraan: " + kewarganegaraan
+        );
+
+        var konfirmasi = confirm("Apakah data yang diisi sudah benar?");
+        if (konfirmasi) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <form action="terdaftar.html" method="POST" onsubmit="return proses()">
+    <h1>Form Pendaftaran KTP</h1>
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" name="nama" placeholder="Nama Lengkap" required><br><br>
+
+    <label for="nik">NIK:</label>
+    <input type="text" id="nik" name="nik" maxlength="16" placeholder="16 Digit" required><br><br>
+
+    <label for="tmp">Tempat/Tanggal Lahir:</label>
+    <input type="text" id="tmp" name="tmp" placeholder="Tempat Lahir (Kota)" required>
+    <label for="tgl"></label>
+    <input type="date" id="tgl" name="tgl" max="2006-12-31" required><br><br><br>
+
+    <label for="pekerjaan">Pekerjaan:</label>
+    <input type="text" id="pekerjaan" name="pekerjaan" placeholder="Pekerjaan" required><br><br>
+
+    <label for="alamat">Alamat:</label>
+    <textarea id="alamat" name="alamat" placeholder="Alamat Lengkap" required></textarea><br><br>
+
+    <label for="status">Status Pernikahan:</label>
+    <select id="status" name="status" required>
+      <option value="">Pilih</option>
+      <option value="menikah">Menikah</option>
+      <option value="belum menikah">Belum Menikah</option>
+    </select><br><br>
+
+    <label for="agama">Agama:</label>
+    <select id="agama" name="agama" required>
+      <option value="">Pilih</option>
+      <option value="islam">Islam</option>
+      <option value="protestan">Kristen Protestan</option>
+      <option value="katolik">Kristen Katolik</option>
+      <option value="hindu">Hindu</option>
+      <option value="buddha">Buddha</option>
+      <option value="khonghucu">Khonghucu</option>
+    </select><br><br>
+
+    <label for="golongan">Golongan Darah:</label>
+    <select id="golongan" name="golongan" required>
+      <option value="">Pilih</option>
+      <option value="a">A</option>
+      <option value="b">B</option>
+      <option value="AB">AB</option>
+      <option value="o">O</option>
+    </select><br><br>
+
+    <label for="jenis_kelamin">Jenis Kelamin:</label>
+    <select id="jenis_kelamin" name="jenis_kelamin" required>
+      <option value="">Pilih</option>
+      <option value="Laki-laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+    </select><br><br>
+
+    <label for="kewarganegaraan">Kewarganegaraan:</label>
+    <select id="kewarganegaraan" name="kewarganegaraan" required>
+      <option value="">Pilih</option>
+      <option value="WNI">WNI</option>
+    </select><br><br>
+
+    <input type="checkbox" required>
+    <font size="-1" class="check">Apakah data yang diisi sudah sesuai?</font><br><br>
+
+    <input type="submit" value="Daftar">
+  </form>
+</body>
+</html>
